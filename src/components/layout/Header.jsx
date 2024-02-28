@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
-import { Box, AppBar, Toolbar, Typography, IconButton, Tooltip } from '@mui/material'
+import React, { Suspense, lazy, useState } from 'react'
+import { Box, AppBar, Toolbar, Typography, IconButton, Tooltip, Backdrop } from '@mui/material'
 import { Menu as MenuIcon, Search as SearchIcon, Add as AddIcon, Group as GroupIcon, Logout as LogoutIcon, Notifications as NotificationsIcon } from '@mui/icons-material'
 import { useNavigate } from 'react-router-dom'
+
+const Search = lazy(() => import('../specific/Search'))
+const Notifications = lazy(() => import('../specific/Notifications'))
+const NewGroups = lazy(() => import('../specific/NewGroups'))
 
 const Header = () => {
     const [isMobile, setIsMobile] = useState(false)
@@ -9,8 +13,8 @@ const Header = () => {
     const [isNewGroup, setIsNewGroup] = useState(false)
     const [isManageGroups, setIsManageGroups] = useState(false)
     const [isNotifications, setIsNotifications] = useState(false)
-    
-    const navigate=useNavigate()
+
+    const navigate = useNavigate()
     const handleMobile = () => {
         setIsMobile(!isMobile)
     }
@@ -51,11 +55,32 @@ const Header = () => {
                     </Toolbar>
                 </AppBar>
             </Box>
+            {
+                isSearch && (
+                    <Suspense fallback={<Backdrop open />}>
+                        <Search />
+                    </Suspense>
+                )
+            }
+            {
+                isNotifications && (
+                    <Suspense fallback={<Backdrop open />}>
+                        <Notifications />
+                    </Suspense>
+                )
+            }
+            {
+                isNewGroup && (
+                    <Suspense fallback={<Backdrop open />}>
+                        <NewGroups />
+                    </Suspense>
+                )
+            }
         </>
     )
 }
 
-const IconBtn=({title,icon,onClick})=>(
+const IconBtn = ({ title, icon, onClick }) => (
     <Tooltip title={title}>
         <IconButton color='inherit' size='large' onClick={onClick}>
             {icon}
