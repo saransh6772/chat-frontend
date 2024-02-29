@@ -21,3 +21,17 @@ export const sampleUsers=[{
     name: "John Don",
     _id: "2",
 }]
+
+export const sampleNotifications = [{
+    sender:{
+        avatar: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDMoHCrLnExblm8TAwn8X8zBhbxQDKg1kiFo2lR5aIPw&s"],
+        name: "John Doe",
+    },
+    _id: "1",
+},{
+    sender:{
+        avatar: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDMoHCrLnExblm8TAwn8X8zBhbxQDKg1kiFo2lR5aIPw&s"],
+        name: "John Don",
+    },
+    _id: "2",
+}]
