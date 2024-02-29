@@ -1,5 +1,5 @@
 import React from 'react'
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
 import Title from '../shared/Title'
@@ -13,9 +13,9 @@ const AppLayout = () => WrappedComponent => {
         const params = useParams()
         const chatId = params.chatId
         console.log('chatId', chatId)
-        const handleDeleteChat = (e,_id,groupChat) => {
+        const handleDeleteChat = (e, _id, groupChat) => {
             e.preventDefault()
-            console.log('Delete Chat',_id,groupChat)
+            console.log('Delete Chat', _id, groupChat)
         }
         return (
             <>
@@ -26,9 +26,9 @@ const AppLayout = () => WrappedComponent => {
                     <Grid item xs={12} sm={8} md={5} lg={6} height={"100%"}>
                         <WrappedComponent {...props} />
                     </Grid>
-                    <Grid item md={4} lg={3} sx={{ display: { xs: "none", md: "block" }, padding: "2rem", bgcolor: 'rgba(0,0,0,0.8)' }} height={"100%"}><Profile/></Grid>
+                    <Grid item md={4} lg={3} sx={{ display: { xs: "none", md: "block" }, padding: "2rem", bgcolor: 'rgba(210,180,210,0.5)' }} height={"100%"}><Profile /></Grid>
                 </Grid>
-                <Footer />
+                {/* <Footer /> */}
             </>
         )
     }
