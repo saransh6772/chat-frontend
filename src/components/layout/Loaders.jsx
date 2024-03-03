@@ -1,5 +1,5 @@
-import React from 'react'
 import { Grid, Skeleton, Stack } from '@mui/material'
+import React from 'react'
 
 const Loaders = () => {
     return (

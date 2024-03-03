@@ -1,6 +1,6 @@
+import { Box, Typography } from '@mui/material'
 import React from 'react'
 import AppLayout from '../components/layout/AppLayout'
-import { Box, Typography } from '@mui/material'
 
 const Home = () => {
     return (

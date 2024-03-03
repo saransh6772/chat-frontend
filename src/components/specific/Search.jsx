@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { Dialog, Stack, DialogTitle, List, TextField, InputAdornment } from '@mui/material'
-import { useInputValidation } from '6pp'
+import { useInputValidation } from '6pp';
 import { Search as SearchIcon } from '@mui/icons-material';
-import UserItem from '../shared/UserItem';
+import { Dialog, DialogTitle, InputAdornment, List, Stack, TextField } from '@mui/material';
+import React, { useState } from 'react';
 import { sampleUsers } from '../constants/sampleData';
+import UserItem from '../shared/UserItem';
 
 const Search = () => {
     const search = useInputValidation('')

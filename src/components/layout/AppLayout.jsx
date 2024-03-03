@@ -1,12 +1,11 @@
+import { Grid } from '@mui/material'
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import Header from './Header'
-import Footer from './Footer'
-import Title from '../shared/Title'
-import { Grid } from '@mui/material'
-import ChatList from '../specific/ChatList'
 import { sampleChats } from '../constants/sampleData'
+import Title from '../shared/Title'
+import ChatList from '../specific/ChatList'
 import Profile from '../specific/Profile'
+import Header from './Header'
 
 const AppLayout = () => WrappedComponent => {
     return (props) => {

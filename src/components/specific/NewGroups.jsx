@@ -1,8 +1,8 @@
+import { useInputValidation } from '6pp'
+import { Button, Dialog, DialogTitle, Stack, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import { Dialog, Stack, DialogTitle, TextField, Typography, ListItem, Avatar, Button } from '@mui/material'
 import { sampleUsers } from '../constants/sampleData'
 import UserItem from '../shared/UserItem'
-import { useInputValidation } from '6pp'
 
 const NewGroups = () => {
     const groupName = useInputValidation('')
@@ -32,7 +32,7 @@ const NewGroups = () => {
                 <Stack>
                     {
                         members.map((i) => (
-                            <UserItem user={i} key={i._id} handler={selectMemberHandler} isAdded={selectedMembers.includes(i._id)}/>
+                            <UserItem user={i} key={i._id} handler={selectMemberHandler} isAdded={selectedMembers.includes(i._id)} />
                         ))
                     }
                 </Stack>

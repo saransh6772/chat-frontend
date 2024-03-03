@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { Container, Paper, Typography, TextField, Button, Stack, Avatar, IconButton } from '@mui/material'
+import { useFileHandler, useInputValidation } from '6pp'
 import { CameraAlt } from '@mui/icons-material'
+import { Avatar, Button, Container, IconButton, Paper, Stack, TextField, Typography } from '@mui/material'
+import React, { useState } from 'react'
 import { VisuallyHiddenInput } from '../components/styles/StyledComponents'
-import { useInputValidation, useFileHandler } from '6pp'
 import { usernameValidator } from '../utils/validators'
 
 const Login = () => {

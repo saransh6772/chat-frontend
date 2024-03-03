@@ -1,5 +1,5 @@
+import { Avatar, Button, Dialog, DialogTitle, ListItem, Stack, Typography } from '@mui/material'
 import React, { memo } from 'react'
-import { Dialog, Stack, DialogTitle, Typography, ListItem, Avatar, Button } from '@mui/material'
 import { sampleNotifications } from '../constants/sampleData'
 
 const Notifications = () => {

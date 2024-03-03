@@ -1,7 +1,7 @@
-import React from 'react'
-import { Stack, Avatar, Typography } from '@mui/material'
-import { Face6TwoTone as FaceIcon, AlternateEmailRounded as UserNameIcon, CalendarMonth as CalendarIcon } from '@mui/icons-material'
+import { CalendarMonth as CalendarIcon, Face6TwoTone as FaceIcon, AlternateEmailRounded as UserNameIcon } from '@mui/icons-material'
+import { Avatar, Stack, Typography } from '@mui/material'
 import moment from 'moment'
+import React from 'react'
 
 const Profile = () => {
     return (

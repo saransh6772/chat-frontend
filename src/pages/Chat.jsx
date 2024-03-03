@@ -1,11 +1,11 @@
-import React, { useRef } from 'react'
-import AppLayout from '../components/layout/AppLayout'
-import { Box, Dialog, Stack, IconButton, TextField, DialogTitle, Typography, ListItem, Avatar, Button } from '@mui/material'
 import { AttachFileRounded as FileIcon, Send as SendIcon } from '@mui/icons-material'
-import { InputBox } from '../components/styles/StyledComponents'
-import FileMenu from '../components/dialogs/FileMenu'
+import { IconButton, Stack } from '@mui/material'
+import React, { useRef } from 'react'
 import { sampleMessages } from '../components/constants/sampleData'
+import FileMenu from '../components/dialogs/FileMenu'
+import AppLayout from '../components/layout/AppLayout'
 import MessageComponent from '../components/shared/MessageComponent'
+import { InputBox } from '../components/styles/StyledComponents'
 
 const user = {
     _id: '2',
