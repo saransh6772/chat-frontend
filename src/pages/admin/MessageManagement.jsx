@@ -21,7 +21,7 @@ const columns = [
         renderCell: (params) => {
             const { attachments } = params.row
             return attachments?.length > 0 ? (
-                attachments.map(i => {
+                attachments.map((i) => {
                     const url = i.url
                     const file = fileFormat(url)
                     return (<Box>

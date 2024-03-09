@@ -92,10 +92,10 @@ export const dashboardData = {
         members: [
             {
                 _id: "1",
-                avatar: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDMoHCrLnExblm8TAwn8X8zBhbxQDKg1kiFo2lR5aIPw&s"],
+                avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDMoHCrLnExblm8TAwn8X8zBhbxQDKg1kiFo2lR5aIPw&s",
             }, {
                 _id: "2",
-                avatar: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDMoHCrLnExblm8TAwn8X8zBhbxQDKg1kiFo2lR5aIPw&s"],
+                avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDMoHCrLnExblm8TAwn8X8zBhbxQDKg1kiFo2lR5aIPw&s",
             }
         ],
         totalMembers: 2,
@@ -112,10 +112,10 @@ export const dashboardData = {
         members: [
             {
                 _id: "1",
-                avatar: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDMoHCrLnExblm8TAwn8X8zBhbxQDKg1kiFo2lR5aIPw&s"],
+                avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDMoHCrLnExblm8TAwn8X8zBhbxQDKg1kiFo2lR5aIPw&s",
             }, {
                 _id: "2",
-                avatar: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDMoHCrLnExblm8TAwn8X8zBhbxQDKg1kiFo2lR5aIPw&s"],
+                avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDMoHCrLnExblm8TAwn8X8zBhbxQDKg1kiFo2lR5aIPw&s",
             }
         ],
         totalMembers: 2,
@@ -143,12 +143,7 @@ export const dashboardData = {
             createdAt: '2024-01-10T10:10:10',
             groupChat: false,
         }, {
-            attachments: [
-                {
-                    public_id: "1",
-                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDMoHCrLnExblm8TAwn8X8zBhbxQDKg1kiFo2lR5aIPw&s",
-                },
-            ],
+            attachments: [],
             content: "Hi",
             _id: "2",
             sender: {

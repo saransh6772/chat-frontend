@@ -46,7 +46,7 @@ const columns = [
         width: 250,
         renderCell: (params) => (
             <Stack direction={'row'} alignItems={'center'} spacing={'1rem'}>
-                <AvatarCard avatar={params.row.creator.avatar} />
+                <Avatar src={params.row.creator.avatar} alt={params.row.creator.name} />
                 <span>{params.row.creator.name}</span>
             </Stack>
         )
@@ -56,15 +56,15 @@ const columns = [
 const ChatManagement = () => {
     const [rows, setRows] = useState([])
     useEffect(() => {
-        setRows(dashboardData.chats.map((chat) => ({ 
-            ...chat, 
-            id: chat._id, 
-            avatar: chat.avatar.map(i => transformImage(i, 50)), 
-            members: chat.members.map(i => transformImage(i.avatar, 50)), 
-            creator: { 
-                name: chat.creator.name, 
-                avatar: transformImage(chat.creator.avatar, 50) 
-            } 
+        setRows(dashboardData.chats.map((chat) => ({
+            ...chat,
+            id: chat._id,
+            avatar: chat.avatar.map(i => transformImage(i, 50)),
+            members: chat.members.map(i => transformImage(i.avatar, 50)),
+            creator: {
+                name: chat.creator.name,
+                avatar: transformImage(chat.creator.avatar, 50)
+            }
         })))
     }, [])
     return (
