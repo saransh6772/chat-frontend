@@ -32,7 +32,7 @@ const Sidebar = ({ w = '100%' }) => {
     }
     return (
         <Stack width={w} direction={'column'} p={'3rem'} spacing={'3rem'}>
-            <Typography variant='h6' textTransform={'uppercase'}>Admin</Typography>
+            <Typography variant='h4'>Admin</Typography>
             <Stack spacing={'1rem'}>
                 {
                     adminTabs.map((tab) => (
