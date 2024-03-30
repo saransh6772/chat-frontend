@@ -3,7 +3,7 @@ import { Avatar, Box, Stack } from "@mui/material";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import AdminLayout from "../../components/layout/AdminLayout";
-import RenderAttachment from "../../components/shared/RenderAttachment";
+import AttachmentCard from "../../components/shared/AttachmentCard";
 import Table from "../../components/shared/Table";
 import { server } from "../../constants/config";
 import { useErrors } from "../../hooks/hook";
@@ -29,7 +29,7 @@ const columns = [
                 return (
                     <Box>
                         <a href={url} download target="_blank" style={{ color: "black", }}>
-                            {RenderAttachment(file, url)}
+                            {AttachmentCard(file, url)}
                         </a>
                     </Box>
                 );
