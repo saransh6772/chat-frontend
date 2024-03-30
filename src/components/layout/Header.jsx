@@ -1,15 +1,14 @@
+import { Add as AddIcon, Group as GroupIcon, Logout as LogoutIcon, Menu as MenuIcon, Notifications as NotificationsIcon, Search as SearchIcon, } from "@mui/icons-material";
 import { AppBar, Backdrop, Badge, Box, IconButton, Toolbar, Tooltip, Typography, } from "@mui/material";
-import React, { Suspense, lazy, useState } from "react";
-import { orange } from "../../constants/color";
-import { Add as AddIcon, Menu as MenuIcon, Search as SearchIcon, Group as GroupIcon, Logout as LogoutIcon, Notifications as NotificationsIcon, } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { server } from "../../constants/config";
+import React, { Suspense, lazy } from "react";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { server } from "../../constants/config";
 import { userNotExists } from "../../redux/reducers/auth";
-import { setIsMobile, setIsNewGroup, setIsNotification, setIsSearch, } from "../../redux/reducers/misc";
 import { resetNotificationCount } from "../../redux/reducers/chat";
+import { setIsMobile, setIsNewGroup, setIsNotification, setIsSearch, } from "../../redux/reducers/misc";
 
 const SearchDialog = lazy(() => import("../specific/Search"));
 const NotifcationDialog = lazy(() => import("../specific/Notifications"));
@@ -42,7 +41,7 @@ const Header = () => {
     return (
         <>
             <Box sx={{ flexGrow: 1 }} height={"4rem"}>
-                <AppBar position="static" sx={{ bgcolor: orange, }}>
+                <AppBar position="static" sx={{ bgcolor: 'rgba(170,120,170,0.5)' }}>
                     <Toolbar>
                         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" }, }}>Chat App</Typography>
                         <Box sx={{ display: { xs: "block", sm: "none" }, }}>

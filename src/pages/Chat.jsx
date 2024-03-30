@@ -1,21 +1,20 @@
-import React, { Fragment, useCallback, useEffect, useRef, useState, } from "react";
-import AppLayout from "../components/layout/AppLayout";
-import { IconButton, Skeleton, Stack } from "@mui/material";
-import { grayColor, orange } from "../constants/color";
-import { AttachFile as AttachFileIcon, Send as SendIcon, } from "@mui/icons-material";
-import { InputBox } from "../components/styles/StyledComponents";
-import FileMenu from "../components/dialogs/FileMenu";
-import MessageComponent from "../components/shared/MessageComponent";
-import { getSocket } from "../socket";
-import { ALERT, CHAT_JOINED, CHAT_LEAVED, NEW_MESSAGE, START_TYPING, STOP_TYPING, } from "../constants/events";
-import { useChatDetailsQuery, useGetMessagesQuery } from "../redux/api/api";
-import { useErrors, useSocketEvents } from "../hooks/hook";
 import { useInfiniteScrollTop } from "6pp";
+import { AttachFile as AttachFileIcon, Send as SendIcon, } from "@mui/icons-material";
+import { IconButton, Skeleton, Stack } from "@mui/material";
+import React, { Fragment, useCallback, useEffect, useRef, useState, } from "react";
 import { useDispatch } from "react-redux";
-import { setIsFileMenu } from "../redux/reducers/misc";
-import { removeNewMessagesAlert } from "../redux/reducers/chat";
-import { TypingLoader } from "../components/layout/Loaders";
 import { useNavigate } from "react-router-dom";
+import FileMenu from "../components/dialogs/FileMenu";
+import AppLayout from "../components/layout/AppLayout";
+import { TypingLoader } from "../components/layout/Loaders";
+import MessageComponent from "../components/shared/MessageComponent";
+import { InputBox } from "../components/styles/StyledComponents";
+import { ALERT, CHAT_JOINED, CHAT_LEAVED, NEW_MESSAGE, START_TYPING, STOP_TYPING, } from "../constants/events";
+import { useErrors, useSocketEvents } from "../hooks/hook";
+import { useChatDetailsQuery, useGetMessagesQuery } from "../redux/api/api";
+import { removeNewMessagesAlert } from "../redux/reducers/chat";
+import { setIsFileMenu } from "../redux/reducers/misc";
+import { getSocket } from "../socket";
 
 const Chat = ({ chatId, user }) => {
     const socket = getSocket();
@@ -132,7 +131,7 @@ const Chat = ({ chatId, user }) => {
         <Skeleton />
     ) : (
         <Fragment>
-            <Stack ref={containerRef} boxSizing={"border-box"} padding={"1rem"} spacing={"1rem"} bgcolor={grayColor} height={"90%"} sx={{ overflowX: "hidden", overflowY: "auto", }}>
+            <Stack ref={containerRef} boxSizing={"border-box"} padding={"1rem"} spacing={"1rem"} bgcolor={'rgba(200,170,200,0.5)'} height={"90%"} sx={{ overflowX: "hidden", overflowY: "auto", }}>
                 {allMessages.map((i) => (
                     <MessageComponent key={i._id} message={i} user={user} />
                 ))}
@@ -140,12 +139,12 @@ const Chat = ({ chatId, user }) => {
                 <div ref={bottomRef} />
             </Stack>
             <form style={{ height: "10%", }} onSubmit={submitHandler}>
-                <Stack direction={"row"} height={"100%"} padding={"1rem"} alignItems={"center"} position={"relative"}>
+                <Stack direction={"row"} height={"100%"} padding={"1rem"} alignItems={"center"} position={"relative"} bgcolor={'rgba(210,180,210,0.8)'}>
                     <IconButton sx={{ position: "absolute", left: "1.5rem", rotate: "30deg", }} onClick={handleFileOpen}>
                         <AttachFileIcon />
                     </IconButton>
                     <InputBox placeholder="Type Message Here..." value={message} onChange={messageOnChange} />
-                    <IconButton type="submit" sx={{ rotate: "-30deg", bgcolor: orange, color: "white", marginLeft: "1rem", padding: "0.5rem", "&:hover": { bgcolor: "error.dark", }, }}>
+                    <IconButton type="submit" sx={{ rotate: "-30deg", bgcolor: 'rgba(180,120,180,0.5)', color: "white", marginLeft: "1rem", padding: "0.5rem", "&:hover": { bgcolor: "rgba(120,100,120,0.5)", }, }}>
                         <SendIcon />
                     </IconButton>
                 </Stack>
