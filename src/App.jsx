@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ProtectRoute from "./components/auth/ProtectRoute";
+import ProtectRoute from "./components/auth/ProtectedRoute";
 import { LayoutLoader } from "./components/layout/Loaders";
 import axios from "axios";
 import { server } from "./constants/config";
@@ -18,9 +18,7 @@ const AdminLogin = lazy(() => import("./pages/admin/AdminLogin"));
 const Dashboard = lazy(() => import("./pages/admin/Dashboard"));
 const UserManagement = lazy(() => import("./pages/admin/UserManagement"));
 const ChatManagement = lazy(() => import("./pages/admin/ChatManagement"));
-const MessagesManagement = lazy(() =>
-    import("./pages/admin/MessageManagement")
-);
+const MessagesManagement = lazy(() => import("./pages/admin/MessageManagement"));
 
 const App = () => {
     const { user, loader } = useSelector((state) => state.auth);
