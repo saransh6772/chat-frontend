@@ -14,6 +14,7 @@ import { resetNotificationCount } from "../../redux/reducers/chat";
 const SearchDialog = lazy(() => import("../specific/Search"));
 const NotifcationDialog = lazy(() => import("../specific/Notifications"));
 const NewGroupDialog = lazy(() => import("../specific/NewGroup.jsx"));
+
 const Header = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -21,9 +22,7 @@ const Header = () => {
     const { notificationCount } = useSelector((state) => state.chat);
     const handleMobile = () => dispatch(setIsMobile(true));
     const openSearch = () => dispatch(setIsSearch(true));
-    const openNewGroup = () => {
-        dispatch(setIsNewGroup(true));
-    };
+    const openNewGroup = () => dispatch(setIsNewGroup(true));
     const openNotification = () => {
         dispatch(setIsNotification(true));
         dispatch(resetNotificationCount());
@@ -40,16 +39,12 @@ const Header = () => {
             toast.error(error?.response?.data?.message || "Something went wrong");
         }
     };
-
     return (
         <>
             <Box sx={{ flexGrow: 1 }} height={"4rem"}>
                 <AppBar position="static" sx={{ bgcolor: orange, }}>
                     <Toolbar>
-                        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" }, }}>
-                            Chattu
-                        </Typography>
-
+                        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" }, }}>Chat App</Typography>
                         <Box sx={{ display: { xs: "block", sm: "none" }, }}>
                             <IconButton color="inherit" onClick={handleMobile}>
                                 <MenuIcon />
@@ -90,9 +85,7 @@ const IconBtn = ({ title, icon, onClick, value }) => {
         <Tooltip title={title}>
             <IconButton color="inherit" size="large" onClick={onClick}>
                 {value ? (
-                    <Badge badgeContent={value} color="error">
-                        {icon}
-                    </Badge>
+                    <Badge badgeContent={value} color="error">{icon}</Badge>
                 ) : (
                     icon
                 )}

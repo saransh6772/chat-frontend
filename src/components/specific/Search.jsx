@@ -27,7 +27,6 @@ const Search = () => {
             clearTimeout(timeOutId);
         };
     }, [search.value]);
-
     return (
         <Dialog open={isSearch} onClose={searchCloseHandler}>
             <Stack p={"2rem"} direction={"column"} width={"25rem"}>
