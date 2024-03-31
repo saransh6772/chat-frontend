@@ -41,13 +41,9 @@ const Login = () => {
                 config
             );
             dispatch(userExists(data.user));
-            toast.success(data.message, {
-                id: toastId,
-            });
+            toast.success(data.message, {id: toastId,});
         } catch (error) {
-            toast.error(error?.response?.data?.message || "Something Went Wrong", {
-                id: toastId,
-            });
+            toast.error(error?.response?.data?.message || "Something Went Wrong", {id: toastId,});
         } finally {
             setIsLoading(false);
         }
@@ -75,13 +71,9 @@ const Login = () => {
                 config
             );
             dispatch(userExists(data.user));
-            toast.success(data.message, {
-                id: toastId,
-            });
+            toast.success(data.message, {id: toastId,});
         } catch (error) {
-            toast.error(error?.response?.data?.message || "Something Went Wrong", {
-                id: toastId,
-            });
+            toast.error(error?.response?.data?.message || "Something Went Wrong", {id: toastId,});
         } finally {
             setIsLoading(false);
         }
