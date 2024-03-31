@@ -21,9 +21,7 @@ const ProfileCard = ({ text, Icon, heading }) => (
         {Icon && Icon}
         <Stack>
             <Typography variant="body1">{text}</Typography>
-            <Typography color={"gray"} variant="caption">
-                {heading}
-            </Typography>
+            <Typography color={"gray"} variant="caption">{heading}</Typography>
         </Stack>
     </Stack>
 );

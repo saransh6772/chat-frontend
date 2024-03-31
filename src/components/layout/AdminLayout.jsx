@@ -45,9 +45,7 @@ const Sidebar = ({ w = "100%" }) => {
     const logoutHandler = () => { dispatch(adminLogout()); };
     return (
         <Stack width={w} direction={"column"} p={"3rem"} spacing={"3rem"}>
-            <Typography variant="h5" textTransform={"uppercase"}>
-                Chat App
-            </Typography>
+            <Typography variant="h5" textTransform={"uppercase"}>Chat App</Typography>
             <Stack spacing={"1rem"}>
                 {adminTabs.map((tab) => (
                     <Link key={tab.path} to={tab.path} sx={location.pathname === tab.path && { bgcolor: matBlack, color: "white", ":hover": { color: "white" }, }}>
