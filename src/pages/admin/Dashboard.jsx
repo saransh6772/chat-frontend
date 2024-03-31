@@ -16,9 +16,9 @@ const Dashboard = () => {
         "dashboard-stats"
     );
     const { stats } = data || {};
-    useErrors([{isError: error,error: error,},]);
+    useErrors([{ isError: error, error: error, },]);
     const Appbar = (
-        <Paper elevation={3} sx={{ padding: "2rem", margin: "2rem 0", borderRadius: "1rem" }}>
+        <Paper elevation={3} sx={{ padding: "1rem", margin: "1rem", borderRadius: "1rem" }}>
             <Stack direction={"row"} alignItems={"center"} spacing={"1rem"}>
                 <AdminPanelSettingsIcon sx={{ fontSize: "3rem" }} />
                 <SearchField placeholder="Search..." />
@@ -44,11 +44,11 @@ const Dashboard = () => {
                 <Container component={"main"}>
                     {Appbar}
                     <Stack direction={{ xs: "column", lg: "row", }} flexWrap={"wrap"} justifyContent={"center"} alignItems={{ xs: "center", lg: "stretch", }} sx={{ gap: "2rem" }}>
-                        <Paper elevation={3} sx={{ padding: "2rem 3.5rem", borderRadius: "1rem", width: "100%", maxWidth: "45rem", }}>
-                            <Typography margin={"2rem 0"} variant="h4">Last Messages</Typography>
+                        <Paper elevation={3} sx={{ padding: "2rem", borderRadius: "1rem", width: "100%", maxWidth: "40rem", }}>
+                            <Typography variant="h4">Last Messages</Typography>
                             <LineChart value={stats?.messagesChart || []} />
                         </Paper>
-                        <Paper elevation={3} sx={{ padding: "1rem ", borderRadius: "1rem", display: "flex", justifyContent: "center", alignItems: "center", width: { xs: "100%", sm: "50%" }, position: "relative", maxWidth: "25rem", }}>
+                        <Paper elevation={3} sx={{ padding: "1rem", borderRadius: "1rem", display: "flex", justifyContent: "center", alignItems: "center", width: { xs: "100%", sm: "50%" }, position: "relative", maxWidth: "25rem", }}>
                             <DoughnutChart labels={["Single Chats", "Group Chats"]} value={[stats?.totalChatsCount - stats?.groupsCount || 0, stats?.groupsCount || 0,]} />
                             <Stack position={"absolute"} direction={"row"} justifyContent={"center"} alignItems={"center"} spacing={"0.5rem"} width={"100%"} height={"100%"}>
                                 <GroupIcon />

@@ -79,10 +79,10 @@ const AdminLayout = ({ children }) => {
                     {isMobile ? <CloseIcon /> : <MenuIcon />}
                 </IconButton>
             </Box>
-            <Grid item md={4} lg={3} sx={{ display: { xs: "none", md: "block" } }}>
+            <Grid item md={2.5} lg={2.5} sx={{ display: { xs: "none", md: "block" } }}>
                 <Sidebar />
             </Grid>
-            <Grid item xs={12} md={8} lg={9} sx={{ bgcolor: grayColor, }}>
+            <Grid item xs={12} md={9.5} lg={9.5} sx={{ bgcolor: grayColor, }}>
                 {children}
             </Grid>
             <Drawer open={isMobile} onClose={handleClose}>
