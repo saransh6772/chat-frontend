@@ -16,12 +16,10 @@ const NewGroup = () => {
     const [newGroup, isLoadingNewGroup] = useAsyncMutation(useNewGroupMutation);
     const groupName = useInputValidation("");
     const [selectedMembers, setSelectedMembers] = useState([]);
-    const errors = [
-        {
-            isError,
-            error,
-        },
-    ];
+    const errors = [{
+        isError,
+        error,
+    }];
     useErrors(errors);
     const selectMemberHandler = (id) => {
         setSelectedMembers((prev) =>
@@ -57,7 +55,7 @@ const NewGroup = () => {
                 </Stack>
                 <Stack direction={"row"} justifyContent={"space-evenly"}>
                     <Button variant="text" color="error" size="large" onClick={closeHandler}>Cancel</Button>
-                    <Button variant="contained"size="large"onClick={submitHandler}disabled={isLoadingNewGroup}>Create</Button>
+                    <Button variant="contained" size="large" onClick={submitHandler} disabled={isLoadingNewGroup}>Create</Button>
                 </Stack>
             </Stack>
         </Dialog>
