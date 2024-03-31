@@ -78,33 +78,23 @@ const Chat = ({ chatId, user }) => {
         };
     }, [chatId]);
     useEffect(() => {
-        if (bottomRef.current)
-            bottomRef.current.scrollIntoView({ behavior: "smooth" });
+        if (bottomRef.current) bottomRef.current.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
     useEffect(() => {
         if (chatDetails.isError) return navigate("/");
     }, [chatDetails.isError]);
-    const newMessagesListener = useCallback(
-        (data) => {
-            if (data.chatId !== chatId) return;
-            setMessages((prev) => [...prev, data.message]);
-        },
-        [chatId]
-    );
-    const startTypingListener = useCallback(
-        (data) => {
-            if (data.chatId !== chatId) return;
-            setUserTyping(true);
-        },
-        [chatId]
-    );
-    const stopTypingListener = useCallback(
-        (data) => {
-            if (data.chatId !== chatId) return;
-            setUserTyping(false);
-        },
-        [chatId]
-    );
+    const newMessagesListener = useCallback((data) => {
+        if (data.chatId !== chatId) return;
+        setMessages((prev) => [...prev, data.message]);
+    }, [chatId]);
+    const startTypingListener = useCallback((data) => {
+        if (data.chatId !== chatId) return;
+        setUserTyping(true);
+    }, [chatId]);
+    const stopTypingListener = useCallback((data) => {
+        if (data.chatId !== chatId) return;
+        setUserTyping(false);
+    }, [chatId]);
     const alertListener = useCallback((data) => {
         if (data.chatId !== chatId) return;
         const messageForAlert = {

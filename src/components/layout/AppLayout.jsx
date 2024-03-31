@@ -38,13 +38,10 @@ const AppLayout = () => (WrappedComponent) => {
             deleteMenuAnchor.current = e.currentTarget;
         };
         const handleMobileClose = () => dispatch(setIsMobile(false));
-        const newMessageAlertListener = useCallback(
-            (data) => {
-                if (data.chatId === chatId) return;
-                dispatch(setNewMessagesAlert(data));
-            },
-            [chatId]
-        );
+        const newMessageAlertListener = useCallback((data) => {
+            if (data.chatId === chatId) return;
+            dispatch(setNewMessagesAlert(data));
+        }, [chatId]);
         const newRequestListener = useCallback(() => {
             dispatch(incrementNotification());
         }, [dispatch]);
