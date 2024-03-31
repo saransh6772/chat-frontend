@@ -15,7 +15,7 @@ const ChatItem = ({ avatar = [], name, _id, groupChat = false, sameSender, isOnl
                         <Typography>{newMessageAlert.count} New Message</Typography>
                     )}
                 </Stack>
-                {isOnline && (
+                {isOnline && !groupChat && (
                     <Box sx={{ width: "10px", height: "10px", borderRadius: "50%", backgroundColor: "green", position: "absolute", top: "50%", right: "1rem", transform: "translateY(-50%)", }} />
                 )}
             </motion.div>
