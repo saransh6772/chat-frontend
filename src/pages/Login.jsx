@@ -96,15 +96,9 @@ const Login = () => {
                             <form style={{ width: "100%", marginTop: "1rem", }} onSubmit={handleLogin}>
                                 <TextField required fullWidth label="Username" margin="normal" variant="outlined" value={username.value} onChange={username.changeHandler} />
                                 <TextField required fullWidth label="Password" type="password" margin="normal" variant="outlined" value={password.value} onChange={password.changeHandler} />
-                                <Button sx={{ marginTop: "1rem", }} variant="contained" color="primary" type="submit" fullWidth disabled={isLoading}>
-                                    Login
-                                </Button>
-                                <Typography textAlign={"center"} m={"1rem"}>
-                                    OR
-                                </Typography>
-                                <Button disabled={isLoading} fullWidth variant="text" onClick={toggleLogin}>
-                                    Sign Up Instead
-                                </Button>
+                                <Button sx={{ marginTop: "1rem", }} variant="contained" color="primary" type="submit" fullWidth disabled={isLoading}>Login</Button>
+                                <Typography textAlign={"center"} m={"1rem"}>OR</Typography>
+                                <Button disabled={isLoading} fullWidth variant="text" onClick={toggleLogin}>Sign Up Instead</Button>
                             </form>
                         </>
                     ) : (
@@ -121,28 +115,18 @@ const Login = () => {
                                     </IconButton>
                                 </Stack>
                                 {avatar.error && (
-                                    <Typography m={"1rem auto"} width={"fit-content"} display={"block"} color="error" variant="caption">
-                                        {avatar.error}
-                                    </Typography>
+                                    <Typography m={"1rem auto"} width={"fit-content"} display={"block"} color="error" variant="caption">{avatar.error}</Typography>
                                 )}
                                 <TextField required fullWidth label="Name" margin="normal" variant="outlined" value={name.value} onChange={name.changeHandler} />
                                 <TextField required fullWidth label="Bio" margin="normal" variant="outlined" value={bio.value} onChange={bio.changeHandler} />
                                 <TextField required fullWidth label="Username" margin="normal" variant="outlined" value={username.value} onChange={username.changeHandler} />
                                 {username.error && (
-                                    <Typography color="error" variant="caption">
-                                        {username.error}
-                                    </Typography>
+                                    <Typography color="error" variant="caption">{username.error}</Typography>
                                 )}
                                 <TextField required fullWidth label="Password" type="password" margin="normal" variant="outlined" value={password.value} onChange={password.changeHandler} />
-                                <Button sx={{ marginTop: "1rem", }} variant="contained" color="primary" type="submit" fullWidth disabled={isLoading}>
-                                    Sign Up
-                                </Button>
-                                <Typography textAlign={"center"} m={"1rem"}>
-                                    OR
-                                </Typography>
-                                <Button disabled={isLoading} fullWidth variant="text" onClick={toggleLogin}>
-                                    Login Instead
-                                </Button>
+                                <Button sx={{ marginTop: "1rem", }} variant="contained" color="primary" type="submit" fullWidth disabled={isLoading}>Sign Up</Button>
+                                <Typography textAlign={"center"} m={"1rem"}>OR</Typography>
+                                <Button disabled={isLoading} fullWidth variant="text" onClick={toggleLogin}>Login Instead</Button>
                             </form>
                         </>
                     )}
