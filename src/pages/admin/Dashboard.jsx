@@ -3,9 +3,9 @@ import { AdminPanelSettings as AdminPanelSettingsIcon, Group as GroupIcon, Messa
 import { Box, Container, Paper, Skeleton, Stack, Typography, } from "@mui/material";
 import moment from "moment";
 import React from "react";
-import AdminLayout from "../../components/layout/AdminLayout";
-import { DoughnutChart, LineChart } from "../../components/specific/Charts";
-import { CurveButton, SearchField, } from "../../components/styles/StyledComponents";
+import AdminLayout from "../../components/layout/AdminLayout.jsx";
+import { DoughnutChart, LineChart } from "../../components/specific/Chart.jsx";
+import { CurveButton, SearchField, } from "../../components/styles/StyledComponents.jsx";
 import { matBlack } from "../../constants/color";
 import { server } from "../../constants/config";
 import { useErrors } from "../../hooks/hook";
