@@ -82,10 +82,10 @@ const AppLayout = () => (WrappedComponent) => {
                             <ChatList chats={data?.chats} chatId={chatId} handleDeleteChat={handleDeleteChat} newMessagesAlert={newMessagesAlert} onlineUsers={onlineUsers} />
                         )}
                     </Grid>
-                    <Grid item xs={12} sm={8} md={5} lg={6} height={"100%"}>
+                    <Grid item xs={12} sm={8} md={6} lg={6} height={"100%"}>
                         <WrappedComponent {...props} chatId={chatId} user={user} />
                     </Grid>
-                    <Grid item md={4} lg={3} height={"100%"} sx={{ display: { xs: "none", md: "block" }, padding: "2rem", bgcolor: "rgba(0,0,0,0.84)", }}>
+                    <Grid item md={3} lg={3} height={"100%"} sx={{ display: { xs: "none", md: "block" }, padding: "2rem", bgcolor: "rgba(0,0,0,0.84)", }}>
                         <Profile user={user} />
                     </Grid>
                 </Grid>
