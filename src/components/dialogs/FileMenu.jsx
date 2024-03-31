@@ -21,7 +21,7 @@ const FileMenu = ({ anchorE1, chatId }) => {
     const selectFile = () => fileRef.current?.click();
     const fileChangeHandler = async (e, key) => {
         const files = Array.from(e.target.files);
-        if (files.length <= 0) return;
+        if (files.length < 1) return;
         if (files.length > 5) return toast.error(`You can only send 5 ${key} at a time`);
         dispatch(setUploadingLoader(true));
         const toastId = toast.loading(`Sending ${key}...`);

@@ -6,7 +6,6 @@ import AttachmentCard from './AttachmentCard'
 
 const MessageComponent = ({ message, user }) => {
     const { sender, content, attachments = [], createdAt } = message
-    console.log(attachments)
     const timeAgo = moment(createdAt).fromNow()
     const sameSender = sender?._id === user?._id
     return (
