@@ -65,7 +65,6 @@ const Groups = () => {
             setIsEdit(false);
         };
     }, [groupDetails.data]);
-
     const navigateBack = () => {
         navigate("/");
     };
@@ -143,12 +142,8 @@ const Groups = () => {
     );
     const ButtonGroup = (
         <Stack direction={{ xs: "column-reverse", sm: "row", }} spacing={"1rem"} p={{ xs: "0", sm: "1rem", md: "1rem 4rem", }}>
-            <Button size="large" color="error" startIcon={<DeleteIcon />} onClick={openConfirmDeleteHandler}>
-                Delete Group
-            </Button>
-            <Button size="large" variant="contained" startIcon={<AddIcon />} onClick={openAddMemberHandler}>
-                Add Member
-            </Button>
+            <Button size="large" color="error" startIcon={<DeleteIcon />} onClick={openConfirmDeleteHandler}>Delete Group</Button>
+            <Button size="large" variant="contained" startIcon={<AddIcon />} onClick={openAddMemberHandler}>Add Member</Button>
         </Stack>
     );
     return myGroups.isLoading ? (
@@ -163,9 +158,7 @@ const Groups = () => {
                 {groupName && (
                     <>
                         {GroupName}
-                        <Typography margin={"2rem"} alignSelf={"flex-start"} variant="body1">
-                            Members
-                        </Typography>
+                        <Typography margin={"2rem"} alignSelf={"flex-start"} variant="body1">Members</Typography>
                         <Stack maxWidth={"45rem"} width={"100%"} boxSizing={"border-box"} padding={{ sm: "1rem", xs: "0", md: "1rem 4rem", }} spacing={"2rem"} height={"50vh"} overflow={"auto"}>
                             {/* Members */}
                             {isLoadingRemoveMember ? (
@@ -204,6 +197,7 @@ const Groups = () => {
         </Grid>
     );
 };
+
 const GroupsList = ({ w = "100%", myGroups = [], chatId }) => (
     <Stack width={w} sx={{ backgroundImage: bgGradient, height: "100vh", overflow: "auto", }}>
         {myGroups.length > 0 ? (
@@ -211,9 +205,7 @@ const GroupsList = ({ w = "100%", myGroups = [], chatId }) => (
                 <GroupListItem group={group} chatId={chatId} key={group._id} />
             ))
         ) : (
-            <Typography textAlign={"center"} padding="1rem">
-                No groups
-            </Typography>
+            <Typography textAlign={"center"} padding="1rem">No groups</Typography>
         )}
     </Stack>
 );
