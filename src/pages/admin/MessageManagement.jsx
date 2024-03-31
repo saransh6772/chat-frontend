@@ -28,9 +28,7 @@ const columns = [
                 const file = fileFormat(url);
                 return (
                     <Box>
-                        <a href={url} download target="_blank" style={{ color: "black", }}>
-                            {AttachmentCard(file, url)}
-                        </a>
+                        <a href={url} download target="_blank" style={{ color: "black", }}>{AttachmentCard(file, url)}</a>
                     </Box>
                 );
             }) : "No Attachments";
@@ -79,12 +77,7 @@ const MessageManagement = () => {
         `${server}/api/v1/admin/messages`,
         "dashboard-messages"
     );
-    useErrors([
-        {
-            isError: error,
-            error: error,
-        },
-    ]);
+    useErrors([{isError: error,error: error,},]);
     const [rows, setRows] = useState([]);
     useEffect(() => {
         if (data) {
@@ -106,12 +99,7 @@ const MessageManagement = () => {
             {loading ? (
                 <Skeleton height={"100vh"} />
             ) : (
-                <Table
-                    heading={"All Messages"}
-                    columns={columns}
-                    rows={rows}
-                    rowHeight={200}
-                />
+                <Table heading={"All Messages"} columns={columns} rows={rows} rowHeight={200} />
             )}
         </AdminLayout>
     );

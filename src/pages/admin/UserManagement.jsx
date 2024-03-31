@@ -53,12 +53,7 @@ const UserManagement = () => {
         `${server}/api/v1/admin/users`,
         "dashboard-users"
     );
-    useErrors([
-        {
-            isError: error,
-            error: error,
-        },
-    ]);
+    useErrors([{ isError: error, error: error, },]);
     const [rows, setRows] = useState([]);
     useEffect(() => {
         if (data) {

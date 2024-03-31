@@ -74,12 +74,7 @@ const ChatManagement = () => {
         `${server}/api/v1/admin/chats`,
         "dashboard-chats"
     );
-    useErrors([
-        {
-            isError: error,
-            error: error,
-        },
-    ]);
+    useErrors([{ isError: error, error: error, },]);
     const [rows, setRows] = useState([]);
     useEffect(() => {
         if (data) {

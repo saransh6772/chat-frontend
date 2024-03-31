@@ -25,9 +25,7 @@ const AdminLogin = () => {
                     <Typography variant="h5">Admin Login</Typography>
                     <form style={{ width: "100%", marginTop: "1rem", }} onSubmit={submitHandler}>
                         <TextField required fullWidth label="Secret Key" type="password" margin="normal" variant="outlined" value={secretKey.value} onChange={secretKey.changeHandler} />
-                        <Button sx={{ marginTop: "1rem", }} variant="contained" color="primary" type="submit" fullWidth>
-                            Login
-                        </Button>
+                        <Button sx={{ marginTop: "1rem", }} variant="contained" color="primary" type="submit" fullWidth>Login</Button>
                     </form>
                 </Paper>
             </Container>
