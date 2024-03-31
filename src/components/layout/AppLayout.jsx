@@ -9,7 +9,7 @@ import { useMyChatsQuery } from "../../redux/api/api";
 import { incrementNotification, setNewMessagesAlert, } from "../../redux/reducers/chat";
 import { setIsDeleteMenu, setIsMobile, setSelectedDeleteChat, } from "../../redux/reducers/misc";
 import { getSocket } from "../../socket";
-import DeleteChatMenu from "../dialogs/DeleteChat.jsx";
+import DeleteChatMenu from "../dialogs/DeleteChatMenu.jsx/index.js";
 import Title from "../shared/Title";
 import ChatList from "../specific/ChatList";
 import Profile from "../specific/Profile";
