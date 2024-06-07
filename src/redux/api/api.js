@@ -49,7 +49,6 @@ const api = createApi({
             query: ({ chatId, populate = false }) => {
                 let url = `chat/${chatId}`;
                 if (populate) url += "?populate=true";
-
                 return {
                     url,
                     credentials: "include",
